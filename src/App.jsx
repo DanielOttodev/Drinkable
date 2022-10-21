@@ -28,7 +28,6 @@ function App() {
       .then((result) => {
         setDrinks(result.drinks);
         console.log(result);
-        console.log(drinks);
       })
       .catch((error) => console.log("error", error));
   }
@@ -46,16 +45,20 @@ function App() {
           ></TextField>
         </Grid>
       </Grid>
-      <Grid mt={5} mb={5} container spacing={3}>
+      <Grid mt={5} mb={5} container>
         {drinks.map((d) => (
-          <Grid item xs={4} key={d.idDrink}>
+          <Grid mt={3} item lg={6} xs={4} key={d.idDrink}>
             {" "}
-            <DrinkCard></DrinkCard>
+            <DrinkCard
+              blurb={d.strInstructions.substr(0, 50) + "..."}
+              title={d.strDrink}
+              thumbnail={d.strDrinkThumb}
+            ></DrinkCard>
           </Grid>
         ))}
       </Grid>
       <Button onClick={searchDrink} variant="contained">
-        Check Value
+        Search
       </Button>
     </div>
   );
