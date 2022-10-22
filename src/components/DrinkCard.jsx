@@ -3,8 +3,10 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
+import { Link } from "react-router-dom";
 
 function DrinkCard(props) {
+  let drinkRoute = props.idDrink;
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
@@ -24,9 +26,11 @@ function DrinkCard(props) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
-          RECIPE
-        </Button>
+        <Link to={`/drink/${props.data.idDrink}`} state={props.data}>
+          <Button size="small" color="primary">
+            RECIPE
+          </Button>
+        </Link>
       </CardActions>
     </Card>
   );

@@ -13,4 +13,4 @@ Front End Tools Used :
 
 ### Why Drinkable?
 
-Why not! I also wanted to learn React a bit better (as I've been heavily into Vue) and I find building things the best way to learn.
+Why not! I also wanted to learn more React (as I've been heavily into Vue) and I find building things the best way to learn.

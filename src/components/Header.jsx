@@ -13,12 +13,20 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import Logo from "../assets/drinkable.svg";
+import { Link } from "react-router-dom";
 
 const pages = ["SEARCH", "About", "API"];
 
 function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
+  };
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
+  };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
@@ -32,7 +40,9 @@ function Header() {
     <AppBar position="static" style={{ background: "#3949ab" }}>
       <Container maxWidth="xl">
         <Toolbar>
-          <img src={Logo} alt="" height="100px" />
+          <Link to="/">
+            <img src={Logo} alt="" height="100px" />
+          </Link>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <Menu
