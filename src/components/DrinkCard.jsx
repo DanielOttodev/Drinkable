@@ -10,7 +10,7 @@ function DrinkCard(props) {
       <CardActionArea>
         <CardMedia
           component="img"
-          height="140"
+          height="180"
           image={props.thumbnail}
           alt={props.title}
         />
