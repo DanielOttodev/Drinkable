@@ -26,7 +26,7 @@ function DrinkCard(props) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Link to={`/drink/${props.data.idDrink}`} state={props.data}>
+        <Link to={`/drink/${props.data.idDrink}`}>
           <Button size="small" color="primary">
             RECIPE
           </Button>
