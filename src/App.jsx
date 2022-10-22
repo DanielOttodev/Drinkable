@@ -5,9 +5,8 @@ import TextField from "@mui/material/TextField";
 import "./App.css";
 // Custom Components
 import DrinkCard from "./components/DrinkCard";
-import Logo from "./assets/drinkable.svg";
 import Header from "./components/Header";
-
+import Logo from "./assets/drinkable.svg";
 function App() {
   const [search, setSearch] = useState("");
   const [drinks, setDrinks] = useState([]);
@@ -37,7 +36,7 @@ function App() {
   return (
     <div className="App">
       <Header></Header>
-      <img src={Logo} alt="" height="250px" />
+      <img src={Logo} height="250" alt="" />
 
       <Grid container>
         <Grid item spacing={2} xs={12}>
@@ -45,7 +44,9 @@ function App() {
             value={search}
             variant="outlined"
             label="Search"
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={(e) => {
+              setSearch(e.target.value);
+            }}
           ></TextField>
           <Grid mt={3} item>
             <Button onClick={searchDrink} variant="contained">
